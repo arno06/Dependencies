@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript Packager</title>
+		<link href="../../common/docs/docs.css" type="text/css" rel="stylesheet">
+		<style>
+			.content form{}
+			.content form .item{float:left;text-align: center;margin-right:10px;margin-bottom:10px;background:url(imgs/javascript.png) no-repeat center center;background-size:40px 40px;}
+			.content form .item label{cursor:pointer;display:block;text-align: center;-webkit-user-select:none;border:3px solid #efefef;width:94px;height:17px;padding-top:77px;}
+			.content form .item input[type="checkbox"]{display:none;}
+			.content form .item input[type='checkbox']:checked + label{border:3px solid #9be38c;}
+
+			.content form .option{margin-bottom:10px;margin-right:10px;float:left;}
+			.content form .option label{cursor:pointer;display:block;text-align: center;-webkit-user-select:none;border:3px solid #efefef;padding:10px;}
+			.content form .option input[type="radio"]{display:none;}
+			.content form .option input[type='radio']:checked + label{border:3px solid #9be38c;}
+			.content form .option input[type='radio']:disabled + label{display:none;}
+
+			.content form hr{background:none;width:50%;border:solid 1px #dbedef;margin:0 auto 10px;}
+
+		</style>
+		<script src="../src/?need=Request,M4,CodeFormater"></script>
+		<script>
+			var Main =
+			{
+				init:function()
+				{
+					Main.packager.init();
+				},
+				packager:
+				{
+					init:function()
+					{
+						document.querySelector(".content").classList.add("loading");
+						Request.load("../src/manifest.json")
+								.onComplete(Main.packager.updateList);
+					},
+					updateList:function(pResponse)
+					{
+						var list = pResponse.responseJSON;
+
+						var ct = document.querySelector(".content.packager");
+
+						ct.innerHTML = "";
+
+						var form = "<form action='' method='post'>";
+
+						for(var i in list)
+						{
+							if(!list.hasOwnProperty(i)||i=="config")
+								continue;
+							form += "<div class='item'>";
+							form += "<input type='checkbox' id='lib_"+i+"' name='lib[]' value='"+i+"'>";
+							form += "<label for='lib_"+i+"'>"+i+"</label>";
+							form += "</div>";
+						}
+
+						form += "<hr class='clear'/>";
+
+						form += "<div class='option'>";
+						form += "<input type='radio' id='un' name='output' value='uncompressed' checked>";
+						form += "<label for='un'>Uncompressed</label>";
+						form += "</div>";
+
+						form += "<div class='option'>";
+						form += "<input type='radio' id='min' name='output' value='minified'>";
+						form += "<label for='min'>Minified</label>";
+						form += "</div>";
+
+						form += "<div class='option'>";
+						form += "<input type='radio' id='zip' name='output' value='zipped' disabled>";
+						form += "<label for='zip'>Zip</label>";
+						form += "</div>";
+
+						form += "<hr class='clear'/>";
+
+						form += "<input type='submit' value='Package'>";
+
+						form += '</form>';
+
+						ct.innerHTML = form;
+
+						ct.classList.remove("loading");
+
+						form = ct.querySelector("form");
+						form.addEventListener("submit", Main.packager.submitHandler, false);
+					},
+					submitHandler:function(e)
+					{
+						e.preventDefault();
+
+						var need = [];
+
+						var libs = document.querySelectorAll("input[name^='lib']:checked");
+
+						libs.forEach(function(inp)
+						{
+							need.push(inp.value);
+						});
+
+						need = need.join(",");
+
+						var opt = document.querySelector("input[name^='output']:checked");
+
+						window.open(Main.BASE_URL+"?need="+need+"&output="+opt.value);
+					}
+				},
+				BASE_URL:"../src/"
+			};
+		</script>
+	</head>
+	<body onload="Main.init()">
+		<div class="error">
+
+		</div>
+		<header>
+			<h1>Javascript Dependencies</h1>
+			<menu>
+				<li><a href="#">Packager</a></li>
+			</menu>
+		</header>
+		<div class="content packager">
+
+		</div>
+
+		<div class="content docs">
+			<h2>About</h2>
+			<p>Lorem Ipsum</p>
+
+			<h2>Usage</h2>
+<pre class="PendingCodeFormater">&lt;script src="path/to/Dependencies/?need=Lib1,Lib2?M4,Stage"&gt;&lt;/script&gt;</pre>
+		</div>
+	</body>
+</html>
