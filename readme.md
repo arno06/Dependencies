@@ -2,7 +2,7 @@ Dependencies
 ============
 
 * Setup JS Libraries in manifest.json
-* Define only one script tag loading many JS libs
+* Define only one script tag, load many JS libs
 * Handle dependencies
 * Handle local and remote files
 * Compress result
@@ -10,7 +10,7 @@ Dependencies
 Usage
 ------------
 ```html
-<script src="path/to/Dependencies/src/?need=Lib1,Lib2?M4,Stage"></script>
+<script src="path/to/Dependencies/src/?need=Lib1,Lib2,M4,Stage"></script>
 ```
 
 Note
