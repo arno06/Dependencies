@@ -69,7 +69,7 @@ foreach($needs as $lib)
  * Minified / Uglyflied / gzip
  */
 
-$accept_gzip = preg_match('/gzip/', $_SERVER['HTTP_ACCEPT_ENCODING'], $matches)&&(!isset($_GET["output"])||empty($_GET["output"]));
+$accept_gzip = isset($_SERVER['HTTP_ACCEPT_ENCODING']) && preg_match('/gzip/', $_SERVER['HTTP_ACCEPT_ENCODING'], $matches)&&(!isset($_GET["output"])||empty($_GET["output"]));
 if($accept_gzip)
 {
 	$headers["Content-Encoding"] = "gzip";
