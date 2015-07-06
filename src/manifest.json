@@ -1,12 +1,15 @@
 {
 	"config":
 	{
-		"relative":"../../"
+		"relative":"../../",
+		"cache":{
+			"duration":120
+		}
 	},
 	"Class":
 	{
 		"need":[],
-		"src":
+		"javascript":
 		[
 			"M4/src/Class.js"
 		]
@@ -14,7 +17,7 @@
 	"ColorPicker":
 	{
 		"need":["M4", "Stage", "UtilsColor"],
-		"src":
+		"javascript":
 		[
 			"Stage/src/StageColorPicker.js"
 		]
@@ -22,7 +25,7 @@
 	"CodeFormater":
 	{
 		"need":[],
-		"src":
+		"javascript":
 		[
 			"CodeFormater/src/CodeFormater.js"
 		]
@@ -30,7 +33,7 @@
 	"Event":
 	{
 		"need":["Class"],
-		"src":
+		"javascript":
 		[
 			"M4/src/Event.js",
 			"M4/src/EventDispatcher.js"
@@ -39,14 +42,14 @@
 	"M4":
 	{
 		"need":["Class", "Event"],
-		"src":
+		"javascript":
 		[
 			"M4/src/M4.js"
 		]
 	},
 	"M4Tween":
 	{
-		"src":
+		"javascript":
 		[
 			"M4Tween/src/M4Tween.js"
 		]
@@ -54,7 +57,7 @@
 	"Request":
 	{
 		"need":["Event"],
-		"src":
+		"javascript":
 		[
 			"Request/src/Request.js"
 		]
@@ -62,7 +65,7 @@
 	"Scroll":
 	{
 		"need":["M4Tween"],
-		"src":
+		"javascript":
 		[
 			"M4Tween/src/Scroll.js"
 		]
@@ -70,7 +73,7 @@
 	"Stage":
 	{
 		"need":["M4"],
-		"src":
+		"javascript":
 		[
 			"Stage/src/Stage.js"
 		]
@@ -78,7 +81,7 @@
 	"Stage3DIso":
 	{
 		"need":["Stage"],
-		"src":
+		"javascript":
 		[
 			"Stage/src/Stage3DIso.js"
 		]
@@ -86,14 +89,14 @@
     "StageChart":
     {
         "need":["Stage"],
-        "src":[
+        "javascript":[
             "Stage/src/StageChart.js"
         ]
     },
 	"Template":
 	{
 		"need":["Class", "Event"],
-		"src":
+		"javascript":
 		[
 			"Template/src/Template.js"
 		]
@@ -101,7 +104,7 @@
 	"UtilsColor":
 	{
 		"need":["M4"],
-		"src":
+		"javascript":
 		[
 			"UtilsColor/src/UtilsColor.js"
 		]
