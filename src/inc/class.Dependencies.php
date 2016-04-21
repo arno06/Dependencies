@@ -95,7 +95,10 @@ class Dependencies
         $cacheDuration = Stack::get("cache.duration", $this->configuration);
         if(!empty($cacheDuration))
         {
-            $eTag = '"'.md5($_GET["need"]).'"';
+            $etag = "empty";
+            if(isset($_GET["need"])&&!empty($_GET["need"]))
+                $etag = $_GET["need"];
+            $eTag = '"'.md5($etag).'"';
 
             $this->headers["Cache-Control"] = "max-age=".$cacheDuration.", public";
             $this->headers["ETag"] = $eTag;
