@@ -30,6 +30,14 @@
 			"CodeFormater/src/CodeFormater.js"
 		]
 	},
+	"IDBHandler":
+	{
+		"need":["Class", "Event"],
+		"javascript":
+		[
+			"BrowserDB/src/IDBHandler.js"
+		]
+	},
 	"Event":
 	{
 		"need":["Class"],
