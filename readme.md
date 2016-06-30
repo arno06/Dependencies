@@ -21,3 +21,5 @@ This version only work with JS but CSS files could be targeted with some changes
 Todo
 -----------
  * [ ] Add Minified support
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/e1151727-820e-4603-a352-dd6e5fc96bd2/mini.png)](https://insight.sensiolabs.com/projects/e1151727-820e-4603-a352-dd6e5fc96bd2)
