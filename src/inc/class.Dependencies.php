@@ -6,7 +6,6 @@ include_once("class.Stack.php");
  * Gère deux types de dépendences JS & CSS
  * @author Arnaud NICOLAS <arno06@gmail.com>
  * @version 1.3
- * @todo minified
  */
 class Dependencies
 {
@@ -115,7 +114,7 @@ class Dependencies
                     header('HTTP/1.1 304 Not Modified');
                     $this->headers["Expires"] = gmdate("D, d M Y H:i:s", $expires)." GMT";
                     $this->writeHeaders();
-                    exit();
+                    exit(0);
                 }
             }
 
@@ -247,7 +246,7 @@ class Dependencies
         $this->headers["Content-Length"] = strlen($pContent);
         $this->writeHeaders();
         echo $pContent;
-        exit();
+        exit(0);
     }
 
     /**

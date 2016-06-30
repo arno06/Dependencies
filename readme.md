@@ -17,3 +17,7 @@ Usage
 Note
 ------------
 This version only work with JS but CSS files could be targeted with some changes ([see php-fw repo](https://github.com/arno06/php-fw))
+
+Todo
+-----------
+ * [ ] Add Minified support
