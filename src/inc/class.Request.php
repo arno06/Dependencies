@@ -1,6 +1,6 @@
 <?php
 /**
- * Class Request - permet de gérer une surcouche nécessaire à CURL pour se simplifier les traitements
+ * Class Request - permet de gerer une surcouche necessaire e CURL pour se simplifier les traitements
  *
  * @author Arnaud NICOLAS - arno06@gmail.com
  * @version .1
@@ -33,7 +33,7 @@ class Request
 
 
 	/**
-	 * Méthode de définition de l'url cible de la requête
+	 * Methode de definition de l'url cible de la requete
 	 * @param  string   $pUrl
 	 * @return void
 	 */
@@ -65,7 +65,7 @@ class Request
 
 
 	/**
-	 * Méthode de définition d'une option liée à la requête en cours
+	 * Methode de definition d'une option liÃ©e Ã  la requete en cours
 	 * @param Number $pCode
 	 * @param string $pValue
 	 * @return void
@@ -76,7 +76,7 @@ class Request
 	}
 
 	/**
-	 * Méthode d'éxecution de la requête - renvoi le résultat du traitement
+	 * Methode d'execution de la requete - renvoi le resultat du traitement
 	 * @throws Exception
 	 * @return string
 	 */
@@ -88,12 +88,12 @@ class Request
 		ob_end_clean();
 		curl_close($this->curlRessource);
 		if(!$return)
-			throw new Exception("Impossible d'accéder à l'url : <b>".$this->url."</b>");
+			throw new Exception("Impossible d'acceder e l'url : <b>".$this->url."</b>");
 		return $datas;
 	}
 
 	/**
-	 * Méthode d'exécution d'une requête http
+	 * Methode d'execution d'une requete http
 	 * @throws Exception
 	 * @param  string   $pUrl
 	 * @return string

@@ -9,7 +9,7 @@ class Stack implements ArrayAccess, Iterator, Countable
 
     public function __construct($pStack = null)
     {
-        if($pStack!=null)
+        if(!is_null($pStack))
             $this->source = $pStack;
         else
             $this->source = array();
@@ -22,7 +22,7 @@ class Stack implements ArrayAccess, Iterator, Countable
         $index = -1;
         foreach($this->source as $k=>$v)
         {
-            if($pStrict==true && $v === $pNeedle)
+            if($pStrict===true && $v === $pNeedle)
                 $index = $k;
             else if ($v == $pNeedle)
                 $index = $k;
@@ -92,7 +92,7 @@ class Stack implements ArrayAccess, Iterator, Countable
      */
     public function offsetSet($offset, $value)
     {
-        if($offset==null)
+        if(is_null($offset))
             $this->source[] = $value;
         else
             $this->source[$offset] = $value;
@@ -225,7 +225,7 @@ class Stack implements ArrayAccess, Iterator, Countable
         return $value;
     }
 
-    static public function in_array_key($pValue ,$pKey, &$pArray)
+    static public function inArrayKey($pValue ,$pKey, &$pArray)
     {
         foreach($pArray as &$obj)
         {
