@@ -116,6 +116,12 @@
 			"Template/src/Template.js"
 		]
 	},
+    "TouchBehavior":
+    {
+        "javascript":[
+            "TouchBehavior/src/TouchBehavior.js"
+        ]
+    },
 	"UtilsColor":
 	{
 		"need":["M4"],
