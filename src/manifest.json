@@ -67,7 +67,14 @@
 		"need":["Event"],
 		"javascript":
 		[
-			"Request/src/Request.js"
+			"Request/src/es5.Request.js"
+		]
+	},
+	"Request.es6":
+	{
+		"javascript":
+		[
+			"Request/src/es6.Request.js"
 		]
 	},
 	"Scroll":
