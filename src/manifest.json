@@ -113,9 +113,15 @@
 		"need":["Class", "Event"],
 		"javascript":
 		[
-			"Template/src/Template.js"
+			"Template/src/es5.Template.js"
 		]
 	},
+    "Template.es6":
+    {
+        "javascript":[
+            "Template/src/Template.js"
+        ]
+    },
     "TouchBehavior":
     {
         "javascript":[
