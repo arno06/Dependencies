@@ -38,6 +38,14 @@
 			"BrowserDB/src/IDBHandler.js"
 		]
 	},
+    "Dabox":
+    {
+        "need":["M4Tween", "Request"],
+        "javascript":
+        [
+            "Dabox/src/Dabox.js"
+        ]
+    },
 	"Event":
 	{
 		"need":["Class"],
