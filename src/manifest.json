@@ -85,6 +85,14 @@
 			"Request/src/es6.Request.js"
 		]
 	},
+	"Request.filler":
+	{
+		"need":["Request.es6"],
+		"javascript":
+		[
+			"Request/src/Request.filler.js"
+		]
+	},
 	"Scroll":
 	{
 		"need":["M4Tween"],
